@@ -45,6 +45,12 @@
         twttr.widgets.load();
     };
 
+    userNameInput.onkeydown = (event) => {
+        if (event.keyCode === 13) {
+            assessmentButton.onclick();
+        }
+    };
+
     const answers = [
         '{userName}のいいところは声です。{userName}の特徴的な声はみなを惹きつけ、心に残ります。',
         '{userName}のいいところはまなざしです。{userName}に見つめられた人は、気になって仕方がないでしょう。',
