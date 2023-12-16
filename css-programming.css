@@ -1,6 +1,7 @@
 .face {
-    color: darkblue;
-}
-.back {
-    color: lightgray;
-}
+    color: red;
+  }
+  .back {
+    color: red;
+    opacity: 0.4;
+  }

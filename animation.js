@@ -1,16 +1,13 @@
-(function(){
-    'use strict';
-    var header = document.getElementById('header');
-    var deg = 0;
-    function rotateHeader() {
-        deg = deg + 6;
-        deg = deg % 360;
-        if ((0 <= deg && deg < 90) || (270 <= deg && deg < 360)) {
-            header.className = 'face';
-        } else {
-            header.className = 'back';
-        }
-        header.style.transform = 'rotateX(' + deg +  'deg)';
-    }
-    setInterval(rotateHeader, 20);
-})();
+let heading = document.getElementById('heading');
+let degree = 0;
+function rotateHeading() {
+  degree = degree + 6;
+  degree = degree % 360;
+  if (degree === 90) {
+    heading.setAttribute('class', 'back');
+  } else if (degree === 270) {
+    heading.setAttribute('class', 'face');
+  }
+  heading.style.transform = 'rotateX(' + degree + 'deg)';
+}
+setInterval(rotateHeading, 20);
