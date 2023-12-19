@@ -1,10 +1,15 @@
-(function(){
-    'use strict';
-    var myBirthTime = new Date(1982, 11, 17, 12, 30);
-    function updateParagraph(){
-        var now = new Date();
-        var seconds = (now.getTime() - myBirthTime.getTime()) / 1000;
-        document.getElementById('birth-time').innerText = '生まれてから' + seconds + '秒経過。';
-    }
-    setInterval(updateParagraph, 50);
-})();
+// 見本用に、クリスマスを常に次のクリスマスとする処理
+
+let nextChristmas = new Date('2023-12-25 00:00');
+
+while (nextChristmas < new Date()) {
+    nextChristmas.setFullYear(nextChristmas.getFullYear() + 1);
+}
+
+function updateParagraph() {
+  let now = new Date();
+  let seconds = (nextChristmas.getTime() - now.getTime()) / 1000;
+  document.getElementById('next-christmas').innerText =
+    '次のクリスマスまで後' + seconds + '秒。';
+}
+setInterval(updateParagraph, 50);
